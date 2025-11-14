@@ -112,7 +112,7 @@ dependencies {
     //implementation("org.xerial:sqlite-jdbc:3.46.0.0")
 
     modImplementation("io.wispforest:owo-lib:$owoVersion")
-    //include("io.wispforest:owo-sentinel:$owoVersion")
+    include("io.wispforest:owo-sentinel:$owoVersion")
 
     mappings("net.fabricmc:yarn:$yarnVersion:v2")
 
