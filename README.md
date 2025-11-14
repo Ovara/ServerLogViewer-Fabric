@@ -8,7 +8,7 @@ The project is split into the **Paper Plugin** and the **Fabric Mod**. Both are 
 
 ## Installation
 
-To install and use ServerLogViewer, download the latest versions of [ServerLogViewer-Paper]() and [ServerLogViewer-Fabric]().
+To install and use ServerLogViewer, download the latest versions of [ServerLogViewer-Paper](https://modrinth.com/plugin/serverlogviewer-paper) and [ServerLogViewer-Fabric](https://modrinth.com/mod/serverlogviewer).
 Add them to your Server and Client, respectively, like you would with any normal Plugin/Mod.
 
 > [!NOTE]
