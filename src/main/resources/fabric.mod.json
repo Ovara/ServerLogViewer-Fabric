@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "slv",
+  "version": "${version}",
+  "name": "ServerLogViewer",
+  "description": "View your server logs on the client with ease!",
+  "authors": [
+    "ACraftingFish"
+  ],
+  "contact": {
+    "homepage": "https://crafting.fish"
+  },
+  "license": "MIT License",
+  "icon": "assets/slv/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "fish.crafting.logviewer.ServerLogViewerClient"
+    ],
+    "main": [
+      "fish.crafting.logviewer.ServerLogViewer"
+    ]
+  },
+  "mixins": [
+    "slv.mixins.json",
+    {
+      "config": "slv.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "owo": ">=${owo_version}",
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "slv.keybind.category.slv": "Server Log Viewer",
+
+  "keybind.slv.open_logs": "Open Logs",
+  "keybind.slv.view_plugins": "View Log Plugins"
+}

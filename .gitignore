@@ -1,0 +1,15 @@
+/.gradle/
+/.idea/
+/build/
+/run/
+/jars/
+
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Project exclude paths
+/versions/1.21.8-fabric/.gradle/
+/versions/1.21.8-fabric/build/
+/versions/1.21.8-fabric/build/classes/java/client/
+/versions/1.21.8-fabric/build/classes/java/main/
