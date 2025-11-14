@@ -29,7 +29,7 @@
     }
   ],
   "depends": {
-    "owo": ">=${owo_version}",
+    "owo-lib": ">=${owo_version}",
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}"
