@@ -91,7 +91,7 @@ public class LogSideBarComponent extends LabelComponent {
         Sizing sizing;
         int color;
         if(simpleView){
-            int numbersSize = ("" + logLine.lineId()).length() * 5; //For 1M and above, increase size
+            int numbersSize = ("" + logLine.lineId()).length() * 6; //For 1M and above, increase size
             sizing = Sizing.fixed(Math.max(30, numbersSize));
             color = logLine.plugin() == null ? 0x00FFFFFF : ColorUtil.alpha(logLine.plugin().getAlphaColor(), 0);
         }else{
