@@ -1,6 +1,6 @@
 [versions]
 loom = "1.12-SNAPSHOT"
-preprocessor = "fad42fb"
+preprocessor = "7de7ac9"
 shadow = "7.1.2"
 blossom = "1.3.1"
 
