@@ -20,7 +20,7 @@ public abstract class CustomKeybind {
                 //#if MC>12110
                 category.category()
                 //#else
-                //$$ category.translation()
+                //$$ category.category().id().toTranslationKey("key.category")
                 //#endif
         ));
     }
