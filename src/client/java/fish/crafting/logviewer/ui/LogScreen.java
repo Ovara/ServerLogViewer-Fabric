@@ -101,8 +101,17 @@ public class LogScreen extends BaseOwoScreen<FlowLayout> {
         viewerAndFilters.child(scroll);
         rootComponent.child(viewerAndFilters);
 
-        rootComponent.keyPress().subscribe((keyCode, scanCode, modifiers) -> {
-            if (keyCode != GLFW.GLFW_KEY_F || (modifiers & GLFW.GLFW_MOD_CONTROL) == 0) return false;
+        //#if MC>12110
+        rootComponent.keyPress().subscribe(keyInput -> {
+        //#else
+        //$$ rootComponent.keyPress().subscribe((keyCode, scanCode, modifiers) -> {
+        //#endif
+
+            //#if MC>12110
+            if (keyInput.key() != GLFW.GLFW_KEY_F || (keyInput.modifiers() & GLFW.GLFW_MOD_CONTROL) == 0) return false;
+            //#else
+            //$$ if (keyCode != GLFW.GLFW_KEY_F || (modifiers & GLFW.GLFW_MOD_CONTROL) == 0) return false;
+            //#endif
 
             FocusHandler focusHandler = uiAdapter.rootComponent.focusHandler();
             if(focusHandler != null){

@@ -21,7 +21,11 @@ public class OPCheckComponent extends BoxComponent {
 
     public OPCheckComponent() {
         super(Sizing.fixed(50), Sizing.fixed(10));
-        mouseDown().subscribe((a, b, c) -> {
+        //#if MC>12110
+        mouseDown().subscribe((click, doubled) -> {
+        //#else
+        //$$ mouseDown().subscribe((a, b, c) -> {
+        //#endif
             reload();
             return true;
         });

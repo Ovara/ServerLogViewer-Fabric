@@ -45,8 +45,13 @@ public class SettingsScreen extends BaseOwoScreen<FlowLayout> {
                 .verticalAlignment(VerticalAlignment.TOP)
                 .surface(Surface.VANILLA_TRANSLUCENT);
 
-        rootComponent.keyPress().subscribe(((keyCode, scanCode, modifiers) -> {
-            if(keyCode == GLFW.GLFW_KEY_ESCAPE){
+        //#if MC>12110
+        rootComponent.keyPress().subscribe((keyInput -> {
+            if(keyInput.key() == GLFW.GLFW_KEY_ESCAPE){
+        //#else
+        //$$ rootComponent.keyPress().subscribe(((keyCode, scanCode, modifiers) -> {
+        //$$ if(keyCode == GLFW.GLFW_KEY_ESCAPE){
+        //#endif
                 OpenLogsKeybind.instance.onPressed();
             }
 
@@ -321,8 +326,13 @@ public class SettingsScreen extends BaseOwoScreen<FlowLayout> {
                 return true;
             });
 
-            keyPress().subscribe((btn, a, b) -> {
-                if(btn == GLFW.GLFW_KEY_ENTER){
+            //#if MC>12110
+            keyPress().subscribe(keyInput -> {
+                if(keyInput.key() == GLFW.GLFW_KEY_ENTER){
+            //#else
+            //$$ keyPress().subscribe((btn, a, b) -> {
+            //$$ if(btn == GLFW.GLFW_KEY_ENTER){
+            //#endif
                     updateSetting();
                 }
                 return true;
@@ -357,7 +367,11 @@ public class SettingsScreen extends BaseOwoScreen<FlowLayout> {
             this.boolSetting = boolSetting;
             cursorStyle(CursorStyle.HAND);
 
-            mouseDown().subscribe((a, b, c) -> {
+            //#if MC>12110
+            mouseDown().subscribe((click, doubled) -> {
+            //#else
+            //$$ mouseDown().subscribe((a, b, c) -> {
+            //#endif
                 onAnySettingChanged();
                 UISounds.playInteractionSound();
                 boolSetting.set(!boolSetting.get());

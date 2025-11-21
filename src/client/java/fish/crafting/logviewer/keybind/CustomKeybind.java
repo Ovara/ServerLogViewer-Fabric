@@ -3,6 +3,7 @@ package fish.crafting.logviewer.keybind;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class CustomKeybind {
@@ -13,10 +14,14 @@ public abstract class CustomKeybind {
                          @NotNull InputUtil.Type type, int code,
                          @NotNull KeybindCategory category){
         this.keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "keybind.slv." + keyID,
+                "key.slv." + keyID,
                 type,
                 code,
-                category.translation()
+                //#if MC>12110
+                category.category()
+                //#else
+                //$$ category.translation()
+                //#endif
         ));
     }
 

@@ -34,10 +34,16 @@ public class GotoLineComponent extends ModernTextBoxComponent {
             setText("");
         });
 
-        keyPress().subscribe((key, scanCode, mods) -> {
-            boolean removeFocus = key == GLFW.GLFW_KEY_ESCAPE || key == GLFW.GLFW_KEY_ENTER;
 
-            if(!getText().isEmpty() && key == GLFW.GLFW_KEY_ENTER){
+        //#if MC>12110
+        keyPress().subscribe(keyInput -> {
+            boolean removeFocus = keyInput.key() == GLFW.GLFW_KEY_ESCAPE || keyInput.key() == GLFW.GLFW_KEY_ENTER;
+            if(!getText().isEmpty() && keyInput.key() == GLFW.GLFW_KEY_ENTER){
+        //#else
+        //$$ keyPress().subscribe((key, scanCode, mods) -> {
+        //$$     boolean removeFocus = key == GLFW.GLFW_KEY_ESCAPE || key == GLFW.GLFW_KEY_ENTER;
+        //$$     if(!getText().isEmpty() && key == GLFW.GLFW_KEY_ENTER){
+        //#endif
                 String text = getText();
                 try{
                     int line = Integer.parseInt(text);

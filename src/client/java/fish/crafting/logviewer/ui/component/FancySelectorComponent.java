@@ -38,7 +38,11 @@ public abstract class FancySelectorComponent<T> extends VerticalFlowLayout {
 
         this.button = new Button();
         this.button.updateValue();
-        this.button.mouseDown().subscribe((x, y, btn) -> {
+        //#if MC>12110
+        this.button.mouseDown().subscribe((click, doubled) -> {
+        //#else
+        //$$ this.button.mouseDown().subscribe((x, y, btn) -> {
+        //#endif
             UISounds.playInteractionSound();
             expanded = !expanded;
             updateExpanded(false);
@@ -88,13 +92,21 @@ public abstract class FancySelectorComponent<T> extends VerticalFlowLayout {
 
         label.cursorStyle(CursorStyle.HAND);
         label.margins(Insets.top(1));
-        label.mouseDown().subscribe((x, y, b) -> {
+        //#if MC>12110
+        label.mouseDown().subscribe((click, doubled) -> {
+        //#else
+        //$$ label.mouseDown().subscribe((x, y, b) -> {
+        //#endif
             onClick(stored);
             return true;
         });
 
         btn.cursorStyle(CursorStyle.HAND);
-        btn.mouseDown().subscribe((x, y, b) -> {
+        //#if MC>12110
+        btn.mouseDown().subscribe((click, doubled) -> {
+        //#else
+        //$$ btn.mouseDown().subscribe((x, y, b) -> {
+        //#endif
             onClick(stored);
             return true;
         });

@@ -7,6 +7,10 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import net.minecraft.text.Text;
 
+//#if MC>12110
+import net.minecraft.client.gui.Click;
+//#endif
+
 public class LabelButtonComponent extends LabelComponent {
     private final Runnable onClick;
     @Setter @Accessors(fluent = true)
@@ -18,11 +22,19 @@ public class LabelButtonComponent extends LabelComponent {
     }
 
     @Override
-    public boolean onMouseDown(double mouseX, double mouseY, int button) {
+    //#if MC>12110
+    public boolean onMouseDown(Click click, boolean doubled) {
         UISounds.playInteractionSound();
         onClick.run();
         return true;
     }
+    //#else
+    //$$ public boolean onMouseDown(double mouseX, double mouseY, int button) {
+    //$$     UISounds.playInteractionSound();
+    //$$     onClick.run();
+    //$$     return true;
+    //$$ }
+    //#endif
 
     @Override
     public void draw(OwoUIDrawContext context, int mouseX, int mouseY, float partialTicks, float delta) {

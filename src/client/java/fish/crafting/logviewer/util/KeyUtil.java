@@ -21,7 +21,11 @@ public class KeyUtil {
 
 
     public static boolean isPressed(int key){
-        return InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), key);
+        //#if MC>12110
+        return InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(), key);
+        //#else
+        //$$ return InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), key);
+        //#endif
     }
 
 }
