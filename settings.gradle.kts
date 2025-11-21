@@ -24,8 +24,7 @@ dependencyResolutionManagement {
 rootProject.buildFileName = "root.gradle.kts"
 
 listOf(
-    "1.21.8-fabric",
-    "1.21.10-fabric"
+    "1.21.8-fabric"
 ).forEach { version ->
     include(":$version")
     project(":$version").apply {
