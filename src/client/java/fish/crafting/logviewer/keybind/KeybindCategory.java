@@ -1,18 +1,20 @@
 package fish.crafting.logviewer.keybind;
 
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.util.Identifier;
+
 public enum KeybindCategory {
 
     SLV("slv"),
     ;
 
-    private final String subid;
+    private final KeyBinding.Category category;
 
     KeybindCategory(String subid){
-        this.subid = subid;
+        this.category = KeyBinding.Category.create(Identifier.of("slv", subid));
     }
 
-    public String translation(){
-        return "slv.keybind.category." + subid;
+    public KeyBinding.Category category(){
+        return this.category;
     }
-
 }
