@@ -3,7 +3,6 @@ package fish.crafting.logviewer.keybind;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class CustomKeybind {
@@ -20,7 +19,7 @@ public abstract class CustomKeybind {
                 //#if MC>12110
                 category.category()
                 //#else
-                //$$ category.category().id().toTranslationKey("key.category")
+                //$$ category.translation()
                 //#endif
         ));
     }

@@ -5,6 +5,7 @@ plugins {
 
 preprocess {
     val fabric12108 = createNode("1.21.8-fabric", 12108, "yarn")
+    val fabric12110 = createNode("1.21.10-fabric", 12110, "yarn")
 
-    //fabric12106.link(fabric12105)
+    fabric12110.link(fabric12108)
 }

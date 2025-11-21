@@ -19,21 +19,25 @@ val mod_name = "ServerLogViewer"
 
 val owoVersion = when (modPlatform.mcVersion) {
     12108 -> "0.12.22+1.21.8"
+    12110 -> "0.12.24+1.21.9"
     else -> error("No owo version defined for ${modPlatform.mcVersion}")
 }
 
 val yarnVersion = when (modPlatform.mcVersion) {
     12108 -> "1.21.8+build.1"
+    12110 -> "1.21.10+build.2"
     else -> error("No mappings defined for ${modPlatform.mcVersion}")
 }
 
 val fabricAPI = when (modPlatform.mcVersion) {
     12108 -> "0.130.0+1.21.8"
+    12110 -> "0.138.3+1.21.10"
     else -> error("No API version defined for ${modPlatform.mcVersion}")
 }
 
 val kyoriVersion = when (modPlatform.mcVersion) {
     12108 -> "6.6.0"
+    12110 -> "6.7.0"
     else -> error("No API version defined for ${modPlatform.mcVersion}")
 }
 
@@ -130,6 +134,7 @@ dependencies {
 // First value is start of range, second value is end of range or null to leave the range open
 val supportedVersionRange: Pair<String, String?> = when (modPlatform.mcVersion) {
     12108 -> "1.21.8" to "1.21.8"
+    12110 -> "1.21.10" to "1.21.10"
     else -> error("Undefined version range for ${modPlatform.mcVersion}")
 }
 
